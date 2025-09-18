@@ -1,0 +1,73 @@
+{% extends 'github_api/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3>Fetch User from GitHub</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{% url 'fetch_user_data' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="username" class="form-label">GitHub Username</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Fetch Data</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3>Fetch User from Database</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{% url 'fetch_from_db' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="username_db" class="form-label">GitHub Username</label>
+                        <input type="text" class="form-control" id="username_db" name="username" required>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Fetch from DB</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h4>Sample Valid Usernames</h4>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li>octocat</li>
+                <li>torvalds</li>
+                <li>JakeWharton</li>
+                <li>mojombo</li>
+                <li>pjhyett</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="card mt-3">
+        <div class="card-header">
+            <h4>Sample Invalid Usernames</h4>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li>thisuserdoesnotexist12345</li>
+                <li>invalid_account_xyz</li>
+                <li>notarealuser_999</li>
+                <li>fake_github_user_test</li>
+                <li>ghost123fake</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
