@@ -2,21 +2,21 @@
 
 ---
 
-# 📊 GitHub Analyzer
+#  GitHub Analyzer
 
 GitHub Analyzer is a Django-based web application that allows users to fetch and analyze GitHub user profiles and their repositories.
 It uses the **GitHub REST API** to retrieve profile details, repository statistics, and stores them in a local database for future access.
 
 ---
 
-## 🚀 Features
+##  Features
 
-* 🔍 Search GitHub users by username
-* 📑 Fetch profile details (name, followers, following, public repositories, account creation date)
-* 📦 Retrieve repository details (language, stars, forks, last updated)
-* 💾 Store and update data in the database
-* 🗄️ Option to fetch stored data from the local database
-* ⚡ Django messages for error handling and notifications
+*  Search GitHub users by username
+*  Fetch profile details (name, followers, following, public repositories, account creation date)
+*  Retrieve repository details (language, stars, forks, last updated)
+*  Store and update data in the database
+*  Option to fetch stored data from the local database
+*  Django messages for error handling and notifications
 
 ---
 
@@ -29,19 +29,19 @@ It uses the **GitHub REST API** to retrieve profile details, repository statisti
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 github_analyzer/
-│── github_analyzer/        # Main project configuration
-│── github_api/             # Application for GitHub data handling
-│   ├── models.py           # Database models
-│   ├── views.py            # Core logic for API & DB fetch
-│   ├── urls.py             # URL routing for app
-│   ├── templates/          # HTML templates
-│   └── static/             # CSS/JS assets (optional)
-│── db.sqlite3              # Default SQLite database
-│── manage.py               # Django management script
+│── github_analyzer/        
+│── github_api/             
+│   ├── models.py           
+│   ├── views.py           
+│   ├── urls.py             
+│   ├── templates/         
+│   └── static/             
+│── db.sqlite3              
+│── manage.py               
 ```
 
 ---
@@ -86,7 +86,7 @@ github_analyzer/
 
 ---
 
-## 📌 Usage
+##  Usage
 
 * Enter a GitHub username on the homepage.
 * The app will fetch user profile + repositories from GitHub API.
