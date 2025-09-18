@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-tykn*@@vta1939#1cu!@s9zm$+v85#4@mflacd_puxzeri48h3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["interview.akashak.online"]
 
 
 # Application definition
