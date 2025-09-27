@@ -28,6 +28,18 @@ DEBUG = True
 ALLOWED_HOSTS = ["interview.akashak.online"]
 
 
+
+from decouple import config
+
+EMAIL_BACKEND = config("EMAIL_BACKEND")
+EMAIL_USE_TLS = config("EMAIL_USE_TLS", cast=bool)
+EMAIL_HOST = config("EMAIL_HOST")
+EMAIL_PORT = config("EMAIL_PORT", cast=int)
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,10 +49,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "github_api"
+    "github_api",
+    "corsheaders"
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -48,6 +62,18 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ALLOW_ALL_ORIGINS = True  # Only for development
+# OR for production:
+ALLOWED_HOSTS = ["*"]
+
+# CSRF settings (if needed)
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "https://yourdomain.com",
+    "http://127.0.0"
+    "https://www.miraq.in"
 ]
 
 ROOT_URLCONF = 'github_analyzer.urls'
